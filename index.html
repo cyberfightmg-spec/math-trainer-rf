@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#221d36">
+<title>Математика · Тренажёр без повторов</title>
+<style>
+:root{--ink:#211d34;--muted:#6b6780;--bg:#f5f2fb;--card:#fff;--accent:#643ab4;--accent-soft:#efe7fc;--green:#1d805d;--red:#ac3850;--line:#e6e1ed;--yellow:#ffeabe}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,'Segoe UI',sans-serif}.shell{max-width:970px;margin:0 auto;padding:32px 18px 64px}.header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}.logo{display:flex;align-items:center;gap:12px}.mark{display:grid;place-items:center;background:#211d34;color:#fff;border-radius:16px;width:49px;height:49px;font-size:27px;font-weight:800}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}h1{font-size:clamp(23px,4vw,34px);letter-spacing:-.035em;margin:2px 0 0;line-height:1.12}.header-small{color:var(--muted);font-size:13px;text-align:right;max-width:220px}.intro{margin:0 0 22px;color:var(--muted)}.modes{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}.tab{border:1px solid var(--line);color:var(--ink);background:#fff;padding:11px 15px;border-radius:13px;font-weight:750;cursor:pointer}.tab.active{background:var(--ink);border-color:var(--ink);color:#fff}.cols{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(240px,1fr);gap:18px}.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 5px 24px #27134908}.topic{color:var(--accent);font-weight:750;font-size:13px}.question-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.step{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:750}.problem{margin:28px auto 24px;min-height:142px;display:flex;align-items:center;justify-content:center;font-size:clamp(37px,6vw,64px);font-weight:750;letter-spacing:0}.problem.small{font-size:clamp(28px,5vw,45px)}.column-problem{font:700 clamp(42px,7vw,70px)/1.1 ui-monospace,SFMono-Regular,Consolas,monospace;display:flex;flex-direction:column;align-items:flex-end;min-width:3.9ch}.column-problem .bottom{border-bottom:4px solid currentColor;width:100%;text-align:right;padding-bottom:7px}.column-problem .top{width:100%;text-align:right}.column-problem .answer{height:19px}.input-line{display:flex;gap:8px;margin-bottom:10px}input[type=number]{font:700 27px/1.2 system-ui;width:100%;min-width:0;border-radius:14px;border:2px solid var(--line);padding:13px 16px;outline:none;background:#fff;color:var(--ink)}input:focus{border-color:var(--accent)}button{font-family:inherit}.primary{background:var(--accent);color:#fff;border:0;border-radius:14px;font-size:16px;font-weight:760;padding:15px 20px;cursor:pointer;white-space:nowrap}.primary:disabled{background:#c4b6dc;cursor:default}.secondary{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;font-weight:700;padding:10px 13px;cursor:pointer}.notice{border-radius:12px;padding:11px 13px;font-size:14px;min-height:44px;background:#f4f1f9;color:var(--muted)}.notice.good{background:#e6f6ed;color:var(--green)}.notice.bad{background:#fcecf0;color:var(--red)}.progress-row{display:flex;align-items:center;gap:10px;margin:14px 0 7px}.progress-label{font-weight:750;font-size:14px;flex:1}.progress-num{font-size:13px;color:var(--muted)}.bar{background:#eee9f5;border-radius:999px;height:10px;overflow:hidden}.bar>div{height:100%;border-radius:inherit;background:var(--accent);transition:width .2s}.desc{font-size:13px;color:var(--muted);margin:12px 0 0}.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:20px 0}.metric{background:#f7f5fa;padding:13px;border-radius:13px}.metric strong{display:block;font-size:26px;letter-spacing:-.03em}.metric span{font-size:12px;color:var(--muted)}.divider{border:0;border-top:1px solid var(--line);margin:22px 0}.controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.helper{font-size:13px;color:var(--muted)}.sheet{margin-top:18px;display:none}.sheet.visible{display:block}.sheet-head{display:flex;justify-content:space-between;gap:10px;align-items:center}.sheet h2{font-size:20px}.sheet-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.sheet-item{padding:20px 10px;background:#faf9fc;border:1px dashed #d9d2e8;border-radius:12px;min-height:128px;font-weight:700}.sheet-item .idx{font-size:12px;color:var(--muted);font-weight:600;margin-bottom:6px}.sheet-item .expr{font-size:22px;white-space:nowrap}.sheet-item .line{border-bottom:1px solid #bdb8c8;margin-top:24px;width:70%}.sheet-key{font-size:13px;color:var(--muted);margin-top:16px}.sheet-key details{margin-top:8px}.footnote{color:var(--muted);font-size:13px;margin-top:18px}.lost{padding:18px;background:#fff9ea;border-radius:12px}.hidden{display:none!important}@media(max-width:700px){.cols{grid-template-columns:1fr}.header-small{display:none}.shell{padding-top:18px}.panel{padding:20px}.sheet-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.input-line{flex-wrap:wrap}.input-line .primary{width:100%}}@media print{body{background:#fff}.header,.intro,.modes,.cols,.footnote,.sheet-head button,.sheet-key,.not-print{display:none!important}.shell{max-width:none;margin:0;padding:0}.sheet{display:block!important;margin:0}.sheet-head{display:block}.sheet-grid{grid-template-columns:repeat(3,1fr);gap:22px}.sheet-item{border:1px solid #bbb;min-height:138px;break-inside:avoid}.sheet-item .expr{font-size:25px}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="header"><div class="logo"><div class="mark">∑</div><div><div class="eyebrow">Математика · 2–3 класс</div><h1>Примеры без повторов</h1></div></div><div class="header-small">Уровень 2–3 классов · без заданий для 1 класса</div></header>
+  <p class="intro">Вычитание, сложение, столбик, умножение и деление по таблице. Сложность растёт отдельно в каждом разделе, а уже выданные задания не повторяются в этом браузере.</p>
+  <nav class="modes" aria-label="Режимы занятий"><button class="tab active" data-mode="mix">Смешанная тренировка</button><button class="tab" data-mode="mental">Вычитание</button><button class="tab" data-mode="sub">Вычитание столбиком</button><button class="tab" data-mode="add">Сложение в уме</button><button class="tab" data-mode="addcol">Сложение столбиком</button><button class="tab" data-mode="mul">Умножение</button><button class="tab" data-mode="div">Деление</button></nav>
+  <div class="cols"><section class="panel"><div class="question-head"><span id="topic" class="topic">Загрузка…</span><span id="step" class="step"></span></div><div class="problem" id="problem" aria-live="polite"></div><div id="work"><form id="answerForm" autocomplete="off"><div class="input-line"><input id="answer" type="number" inputmode="numeric" step="1" placeholder="Ответ" aria-label="Ваш ответ" required><button id="check" class="primary" type="submit">Проверить</button></div></form><div id="feedback" class="notice" aria-live="polite">Решай спокойно. Следующий пример появится после проверки.</div><div class="controls"><button id="next" class="secondary hidden">Следующий пример →</button><button id="skip" class="secondary">Пропустить</button></div></div><div id="empty" class="lost hidden"><strong>Новых заданий этого типа больше нет.</strong><p>Тренажёр не показывает уже выданные примеры. Выберите другой раздел или следующий уровень сложности.</p></div></section>
+  <aside class="panel"><div class="eyebrow">Мой прогресс</div><div class="stats"><div class="metric"><strong id="count">0</strong><span>Решено верно</span></div><div class="metric"><strong id="errors">0</strong><span>Ошибок</span></div></div><div id="skillProgress"></div><hr class="divider"><div class="eyebrow">Для родителей</div><p class="helper">Продвижение происходит после <strong>6 заданий подряд без ошибок</strong> в каждом навыке. Вычитание, сложение, умножение и деление усложняются независимо друг от друга.</p><div class="controls"><button class="secondary" id="sheetBtn">Лист на 12 заданий</button><button class="secondary" id="resetBtn">Сбросить прогресс</button></div><p class="helper">История сохраняется только на этом устройстве в текущем браузере. При очистке его данных она исчезнет. Сброс не стирает историю выданных заданий.</p></aside></div>
+  <section id="sheet" class="panel sheet"><div class="sheet-head"><div><div class="eyebrow">Задания для печати</div><h2>Математическая тренировка</h2><p class="helper">Имя: ____________________ &nbsp; Дата: ______________</p></div><div class="controls not-print"><button class="secondary" id="printBtn">Распечатать / PDF</button><button class="secondary" id="closeSheet">Закрыть</button></div></div><div class="sheet-grid" id="sheetGrid"></div><div class="sheet-key not-print"><details><summary>Ответы для родителя</summary><div id="sheetAnswers"></div></details></div></section>
+  <p class="footnote">Тренажёр охватывает отдельные арифметические навыки уровня 2–3 классов, а не весь школьный курс. Действия проверяются программно, без ошибок генеративного ИИ.</p>
+</main>
+<script>
+(()=>{'use strict';
+const STORE='math_rf_unique_v1'; // Сохраняем прежний ключ, чтобы не потерять историю примеров.
+const LEVELS={
+mental:[['Двузначное − однозначное (20–39)','Вычитание · уровень 1'],['Двузначное − однозначное (40–79)','Вычитание · уровень 2'],['Двузначное − однозначное (80–99)','Вычитание · уровень 3'],['Двузначное − двузначное с переходом','Вычитание · уровень 4'],['Вычитание в пределах 100: смешанное','Вычитание · уровень 5']],
+add:[['Двузначное + однозначное с переходом','Сложение · уровень 1'],['Двузначное + двузначное без перехода','Сложение · уровень 2'],['Двузначное + двузначное с переходом','Сложение · уровень 3'],['Сумма больше 100','Сложение · уровень 4'],['Трёхзначное + двузначное','Сложение · уровень 5']],
+addcol:[['Трёхзначные без переноса','Сложение столбиком · уровень 1'],['Перенос из единиц','Сложение столбиком · уровень 2'],['Перенос из десятков','Сложение столбиком · уровень 3'],['Два переноса','Сложение столбиком · уровень 4'],['Трёхзначные: смешанные','Сложение столбиком · уровень 5']],
+mul:[['Таблица умножения на 2–5','Умножение · уровень 1'],['Таблица умножения с 6 и 7','Умножение · уровень 2'],['Таблица умножения с 8 и 9','Умножение · уровень 3'],['Найди неизвестный множитель','Умножение · уровень 4'],['Вся таблица умножения','Умножение · закрепление']],
+sub:[['Три цифры: без перехода','Столбик · лёгкий'],['Один переход через разряд','Столбик · средний'],['Два перехода через разряд','Столбик · сложный'],['Вычитание через ноль','Столбик · очень сложный'],['Смешанные трёхзначные числа','Столбик · закрепление']],
+div:[['Деление по таблицам 2–5','Деление · базовый'],['Деление по таблицам 6–7','Деление · средний'],['Деление по таблицам 8–9','Деление · сложный'],['Неизвестный делитель','Деление · применение'],['Неизвестное делимое','Деление · применение'],['Все виды табличного деления','Деление · закрепление']]
+};
+const newSkill=()=>({level:0,streak:0,correct:0});
+const fresh=()=>({seen:[],progress:Object.fromEntries(Object.keys(LEVELS).map(s=>[s,newSkill()])),correct:0,errors:0,turn:0});
+let state;try{state=JSON.parse(localStorage.getItem(STORE))||fresh();if(!state.progress||!Array.isArray(state.seen))throw 0;}catch(e){state=fresh();}
+for(const s of Object.keys(LEVELS)){state.progress[s] ||= newSkill();state.progress[s].level=Math.min(LEVELS[s].length-1,Math.max(0,Number(state.progress[s].level)||0));state.progress[s].streak=Number(state.progress[s].streak)||0;state.progress[s].correct=Number(state.progress[s].correct)||0;}
+let seenSet=new Set(state.seen), mode='mix', current=null, hasError=false, answered=false;
+const el=id=>document.getElementById(id);const save=()=>{try{localStorage.setItem(STORE,JSON.stringify(state));}catch(e){console.warn('Сохранение недоступно',e);}};
+const rand=(lo,hi)=>Math.floor(Math.random()*(hi-lo+1))+lo;const choose=a=>a[rand(0,a.length-1)];
+function q(skill,a,b,op,variant='direct'){
+ // Перестановка слагаемых и множителей в обычных примерах не считается новой задачей.
+ const sameOrder=variant==='direct'&&(op==='+'||op==='×');
+ const operands=sameOrder?[Math.min(a,b),Math.max(a,b)]:[a,b];
+ const key=[op,variant,...operands].join(':');
+ let prompt='',answer=0,column=false;
+ if(op==='−'){prompt=`${a} − ${b}`;answer=a-b;column=skill==='sub';}
+ if(op==='+'){prompt=`${a} + ${b}`;answer=a+b;column=skill==='addcol';}
+ if(op==='×'){
+  if(variant==='factor'){prompt=`${a} × □ = ${a*b}`;answer=b;}
+  else if(variant==='factorLeft'){prompt=`□ × ${b} = ${a*b}`;answer=a;}
+  else{prompt=`${operands[0]} × ${operands[1]}`;answer=a*b;}
+ }
+ if(op==='÷'){const n=a*b;if(variant==='direct'){prompt=`${n} : ${a}`;answer=b;}
+  else if(variant==='divisor'){prompt=`${n} : □ = ${b}`;answer=a;}
+  else{prompt=`□ : ${a} = ${b}`;answer=n;}}
+ return {skill,a,b,op,variant,key,prompt,answer,column};
+}
+function borrowCount(a,b){let borrow=0,count=0;for(let place=0;place<3;place++){const da=Math.floor(a/10**place)%10, db=Math.floor(b/10**place)%10;if(da-borrow<db){borrow=1;count++;}else borrow=0;}return count;}
+function generateSub(){const l=state.progress.sub.level;for(let i=0;i<10000;i++){const a=rand(200,999), b=rand(101,a-1), bor=borrowCount(a,b), zero=Math.floor(a/10)%10===0;
+ if(l===0&&(bor!==0||zero))continue;
+ if(l===1&&(bor!==1||zero))continue;
+ if(l===2&&(bor!==2||zero))continue;
+ if(l===3&&(!zero||bor===0))continue;
+ const out=q('sub',a,b,'−');if(!seenSet.has(out.key))return out;
+}return null;}
+function generateDiv(){const l=state.progress.div.level;let divisors=l===0?[2,3,4,5]:l===1?[6,7]:l===2?[8,9]:[2,3,4,5,6,7,8,9];let variants=l<=2?['direct']:l===3?['divisor']:l===4?['dividend']:['direct','divisor','dividend'];
+// Enumerate the finite table explicitly; no possibility of a duplicate.
+const pool=[];for(const d of divisors)for(let v=2;v<=9;v++)for(const t of variants){const out=q('div',d,v,'÷',t);if(!seenSet.has(out.key))pool.push(out);}
+return pool.length?choose(pool):null;}
+function generateMental(){
+ const l=state.progress.mental.level, pool=[];
+ // Все варианты перечисляются явно. Это гарантирует отсутствие повторов и не допускает
+ // примеров уровня 1 класса: число перед вычитанием всегда двузначное, первый уровень как 22 − 9.
+ for(let a=20;a<=100;a++)for(let b=2;b<=79;b++){
+  if(a<=b||a-b<10)continue;
+  const crossesTen=(a%10)<(b%10);
+  const oneDigit=b<=9;
+  if(l===0&&!(a>=21&&a<=39&&oneDigit&&crossesTen))continue;
+  if(l===1&&!(a>=40&&a<=79&&oneDigit&&crossesTen))continue;
+  if(l===2&&!(a>=80&&a<=99&&oneDigit&&crossesTen))continue;
+  if(l===3&&!(a>=30&&a<=99&&b>=11&&b<=49&&crossesTen))continue;
+  if(l===4&&!(a>=40&&b>=11&&b<=79))continue;
+  const out=q('mental',a,b,'−');if(!seenSet.has(out.key))pool.push(out);
+ }
+ return pool.length?choose(pool):null;
+}
+function generateAdd(){
+ const level=state.progress.add.level;let picked=null,n=0;
+ const sample=(a,b)=>{const out=q('add',a,b,'+');if(!seenSet.has(out.key)&&Math.random()*++n<1)picked=out;};
+ if(level===0){for(let a=21;a<=89;a++)for(let b=2;b<=9;b++)if(a%10+b>=10&&a+b<=99)sample(a,b);}
+ else if(level===1){for(let a=21;a<=89;a++)for(let b=11;b<=89;b++)if(a+b<=99&&a%10+b%10<10)sample(a,b);}
+ else if(level===2){for(let a=21;a<=89;a++)for(let b=11;b<=89;b++)if(a+b<=99&&a%10+b%10>=10)sample(a,b);}
+ else if(level===3){for(let a=40;a<=99;a++)for(let b=20;b<=99;b++)if(a+b>=100&&a+b<=198)sample(a,b);}
+ else{for(let a=101;a<=899;a++)for(let b=11;b<=99;b++)if(a+b<=999)sample(a,b);}
+ return picked;
+}
+function addCarry(a,b){const ones=a%10+b%10>=10;
+ const tens=(Math.floor(a/10)%10)+(Math.floor(b/10)%10)+(ones?1:0)>=10;
+ return [ones,tens];}
+function generateAddcol(){
+ const l=state.progress.addcol.level;
+ const matches=(a,b)=>{const [ones,tens]=addCarry(a,b);
+  if(l===0)return !ones&&!tens;
+  if(l===1)return ones&&!tens;
+  if(l===2)return !ones&&tens;
+  if(l===3)return ones&&tens;
+  return true;};
+ for(let i=0;i<10000;i++){
+  const a=rand(100,899),b=rand(100,999-a);if(!matches(a,b))continue;
+  const out=q('addcol',a,b,'+');if(!seenSet.has(out.key))return out;
+ }
+ // Предохранитель на случай почти исчерпанного банка: полный проход, без ложных повторов.
+ let picked=null,n=0;
+ for(let a=100;a<=899;a++)for(let b=100;b<=999-a;b++){
+  if(!matches(a,b))continue;const out=q('addcol',a,b,'+');
+  if(!seenSet.has(out.key)&&Math.random()*++n<1)picked=out;
+ }
+ return picked;
+}
+function generateMul(){
+ const l=state.progress.mul.level,pool=[],keys=new Set();
+ for(let a=2;a<=9;a++)for(let b=2;b<=9;b++){
+  let variants=[];
+  if(l===0&&Math.min(a,b)<=5)variants=['direct'];
+  else if(l===1&&(a===6||a===7||b===6||b===7))variants=['direct'];
+  else if(l===2&&(a>=8||b>=8))variants=['direct'];
+  else if(l===3)variants=['factor'];
+  else if(l===4)variants=['direct','factor','factorLeft'];
+  for(const variant of variants){const out=q('mul',a,b,'×',variant);
+   // Не показываем одну переставленную комбинацию как отдельное задание.
+   if(!seenSet.has(out.key)&&!keys.has(out.key)){pool.push(out);keys.add(out.key);}
+  }
+ }
+ return pool.length?choose(pool):null;
+}
+function getModeSkills(m){return m==='mix'?['mental','add','mul','div','sub','addcol']: [m];}
+function generate(skill){const generators={mental:generateMental,sub:generateSub,add:generateAdd,addcol:generateAddcol,mul:generateMul,div:generateDiv};const gen=generators[skill];let out=gen();
+ while(!out&&state.progress[skill].level<LEVELS[skill].length-1){state.progress[skill].level++;state.progress[skill].streak=0;out=gen();}
+ return out;
+}
+function issue(){const skills=getModeSkills(mode);const start=mode==='mix'?state.turn%skills.length:0;let question=null;
+ for(let offset=0;offset<skills.length;offset++){const skill=skills[(start+offset)%skills.length];question=generate(skill);if(question)break;}
+ if(!question){current=null;return null;}
+ seenSet.add(question.key);state.seen.push(question.key);state.turn++;save();return question;
+}
+function putProblem(p,parent){if(p.column){const sign=document.createElement('div');sign.className='column-problem';sign.innerHTML=`<div class="top">${p.a}</div><div class="bottom">${p.op==='+'?'+':'−'}${p.b}</div><div class="answer"></div>`;parent.replaceChildren(sign);}else{parent.textContent=p.prompt;parent.classList.toggle('small',p.prompt.length>11);}}
+function renderProgress(){
+ el('count').textContent=state.correct;el('errors').textContent=state.errors;
+ const names={mental:'Вычитание в уме',sub:'Вычитание столбиком',add:'Сложение в уме',addcol:'Сложение столбиком',mul:'Таблица умножения',div:'Табличное деление'};
+ const box=el('skillProgress');box.replaceChildren();
+ for(const skill of ['mental','sub','add','addcol','mul','div']){
+  const data=state.progress[skill];const wrap=document.createElement('div');const max=LEVELS[skill].length;
+  const width=Math.min(100,Math.round((data.level+Math.min(6,data.streak)/6)/max*100));
+  wrap.innerHTML=`<div class="progress-row"><div class="progress-label">${names[skill]}</div><div class="progress-num">${data.level+1} / ${max}</div></div><div class="bar"><div style="width:${width}%"></div></div><p class="desc">${LEVELS[skill][data.level][0]} · серия ${Math.min(6,data.streak)}/6</p>`;
+  box.append(wrap);
+ }
+}
+function renderQuestion(){answered=false;hasError=false;current=issue();el('empty').classList.toggle('hidden',!!current);el('work').classList.toggle('hidden',!current);if(!current){el('problem').replaceChildren();el('topic').textContent='Банк доступных примеров исчерпан';el('step').textContent='Без повторов';renderProgress();return;}
+ const lvl=state.progress[current.skill].level;el('topic').textContent=LEVELS[current.skill][lvl][0];el('step').textContent=LEVELS[current.skill][lvl][1];el('problem').classList.remove('small');putProblem(current,el('problem'));el('answer').value='';el('answer').disabled=false;el('check').disabled=false;el('check').textContent='Проверить';el('next').classList.add('hidden');el('skip').classList.remove('hidden');el('feedback').className='notice';el('feedback').textContent='Введи ответ и нажми «Проверить».';renderProgress();el('answer').focus({preventScroll:true});}
+function check(e){e.preventDefault();if(!current||answered)return;const value=el('answer').value.trim();if(value==='')return;const n=Number(value);if(n===current.answer){answered=true;state.correct++;const p=state.progress[current.skill];p.correct++;if(!hasError){p.streak++;if(p.streak>=6&&p.level<LEVELS[current.skill].length-1){p.level++;p.streak=0;el('feedback').textContent='Верно! 🎉 Новый уровень открыт.';}else el('feedback').textContent='Верно! Отличная работа.';}else el('feedback').textContent='Теперь верно! Разберёмся с похожими примерами дальше.';el('feedback').className='notice good';el('answer').disabled=true;el('check').disabled=true;el('next').classList.remove('hidden');el('skip').classList.add('hidden');save();renderProgress();el('next').focus();}else{if(!hasError){state.errors++;state.progress[current.skill].streak=0;hasError=true;save();renderProgress();}el('feedback').className='notice bad';el('feedback').textContent=(current.op==='−'||current.op==='+')?'Пока неверно. Проверь единицы и десятки по разрядам.':'Пока неверно. Вспомни соответствующий пример из таблицы умножения.';el('answer').select();}}
+function setMode(m){mode=m;document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));el('sheet').classList.remove('visible');renderQuestion();}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
+el('answerForm').addEventListener('submit',check);el('next').addEventListener('click',renderQuestion);el('skip').addEventListener('click',()=>{if(current){state.progress[current.skill].streak=0;save();}renderQuestion();});
+el('resetBtn').addEventListener('click',()=>{if(confirm('Сбросить уровни и счётчик? Уже выданные задания НЕ будут повторяться.')){state.progress=Object.fromEntries(Object.keys(LEVELS).map(s=>[s,newSkill()]));state.correct=0;state.errors=0;save();renderQuestion();}});
+function sheet(){const arr=[];for(let i=0;i<12;i++){const skills=getModeSkills(mode);let x=null;for(let k=0;k<skills.length;k++){const skill=skills[(i+k)%skills.length];x=generate(skill);if(x)break;}if(!x)break;seenSet.add(x.key);state.seen.push(x.key);arr.push(x);}save();const grid=el('sheetGrid');grid.replaceChildren();arr.forEach((x,i)=>{const item=document.createElement('div');item.className='sheet-item';const idx=document.createElement('div');idx.className='idx';idx.textContent=`Задание ${i+1}`;const exp=document.createElement('div');exp.className='expr';exp.textContent=x.prompt.replace('□','___');const line=document.createElement('div');line.className='line';item.append(idx,exp,line);grid.append(item);});el('sheetAnswers').textContent=arr.map((x,i)=>`${i+1}) ${x.answer}`).join(' · ');el('sheet').classList.add('visible');el('sheet').scrollIntoView({behavior:'smooth',block:'start'});}
+el('sheetBtn').addEventListener('click',sheet);el('printBtn').addEventListener('click',()=>window.print());el('closeSheet').addEventListener('click',()=>el('sheet').classList.remove('visible'));
+renderQuestion();
+})();
+</script></body></html>
